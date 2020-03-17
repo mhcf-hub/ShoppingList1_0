@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/buttonCreateList"
-        android:layout_width="367dp"
+        android:layout_width="340dp"
         android:layout_height="73dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/buttonShowList"
-        android:layout_width="367dp"
+        android:layout_width="340dp"
         android:layout_height="73dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
@@ -30,7 +30,6 @@
         android:background="@color/bgwhite"
         android:text="@string/show_edit_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerLists" />
 

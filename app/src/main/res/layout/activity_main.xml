@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/buttonAllLists"
-        android:layout_width="367dp"
+        android:layout_width="340dp"
         android:layout_height="73dp"
         android:layout_marginStart="161dp"
         android:layout_marginTop="46dp"

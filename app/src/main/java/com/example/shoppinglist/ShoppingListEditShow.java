@@ -3,8 +3,6 @@ package com.example.shoppinglist;
 import java.io.IOException;
 import java.util.List;
 
-import static android.provider.Contacts.SettingsColumns.KEY;
-
 public class ShoppingListEditShow {
     private ShoppingList shoppingList;
 
@@ -12,7 +10,7 @@ public class ShoppingListEditShow {
         this.shoppingList = shoppingList;
     }
 
-    public List<SimpleItem> getAllItems(){
+    public List<Item> getAllItems(){
         return this.shoppingList.getItems();
     }
 

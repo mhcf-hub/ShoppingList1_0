@@ -17,7 +17,6 @@
         android:background="@color/bgwhite"
         android:text="@string/add_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_list_name" />
 

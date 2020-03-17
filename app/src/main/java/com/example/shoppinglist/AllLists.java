@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.provider.Contacts.SettingsColumns.KEY;
+
 
 public class AllLists extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class AllLists extends AppCompatActivity {
 
     Button createListButton;
 
-    Button showEditList;
+    Button showEditListButton;
 
     SaveData sData;
 
@@ -32,7 +32,27 @@ public class AllLists extends AppCompatActivity {
 
         load();
 
-        spinnerLists = (Spinner) findViewById(R.id.spinnerLists);
+
+        createListButton = findViewById(R.id.buttonCreateList);
+        createListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AllLists.this, AddList.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+        showEditListButton = findViewById(R.id.buttonShowList);
+        showEditListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showList(spinnerLists.getSelectedItem().toString());
+            }
+        });
+
+        spinnerLists = findViewById(R.id.spinnerLists);
         List<String> list = new ArrayList<String>();
 
         if (sData.getLists().size() > 0){
@@ -41,6 +61,7 @@ public class AllLists extends AppCompatActivity {
             }
         } else {
             list.add("no lists found");
+            showEditListButton.setEnabled(false);
         }
 
         try {
@@ -55,23 +76,7 @@ public class AllLists extends AppCompatActivity {
         spinnerLists.setAdapter(dataAdapter);
 
 
-        createListButton = (Button) findViewById(R.id.buttonCreateList);
-        createListButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AllLists.this, AddList.class);
-                startActivity(intent);
 
-            }
-        });
-
-        showEditList = (Button) findViewById(R.id.buttonShowList);
-        showEditList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showList(spinnerLists.getSelectedItem().toString());
-            }
-        });
 
     }
 
@@ -87,7 +92,7 @@ public class AllLists extends AppCompatActivity {
     public void load(){
         try {
             sData = new SaveData();
-            sData =  (SaveData) InternalStorage.readObject(this, KEY);
+            sData =  (SaveData) InternalStorage.readObject(this, "sData");
         } catch (IOException e) {
             System.out.println(e + " e1");
             sData = new SaveData();

@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import static android.provider.Contacts.SettingsColumns.KEY;
-
 public class AddList extends AppCompatActivity {
 
     Button createListFinal;
@@ -72,7 +70,7 @@ public class AddList extends AppCompatActivity {
 
     public void load(){
         try {
-            sData =  (SaveData) InternalStorage.readObject(this, KEY);
+            sData =  (SaveData) InternalStorage.readObject(this, "sData");
         } catch (IOException e) {
             System.out.println(e + " e1");
         } catch (ClassNotFoundException e) {
@@ -85,7 +83,7 @@ public class AddList extends AppCompatActivity {
 
         try {
             // Save the list of entries to internal storage
-            InternalStorage.writeObject(this, KEY, sData);
+            InternalStorage.writeObject(this, "sData", sData);
         } catch (IOException e) {
 
         }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bggrey"
     tools:context=".EditShowShoppingListActivity">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/textview"
+        android:textColor="@color/bgwhite"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +29,14 @@
         android:layout_marginTop="21dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
         android:text="@string/item"
+        android:textColor="@color/bgwhite"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEditShowListName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditShowListName"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        />
 
     <Button
         android:id="@+id/buttonAddItem"
@@ -42,9 +49,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewEditShowListName" />
 
     <ScrollView
+        android:id="@+id/scrollViewAllItems"
         android:layout_width="395dp"
         android:layout_height="504dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextItemName">
 
         <LinearLayout
+            android:id="@+id/linearLayoutAllItems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />

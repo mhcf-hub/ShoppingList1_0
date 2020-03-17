@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleShoppingList implements ShoppingList, Serializable {
-    private List<SimpleItem> items;
+    private List<Item> items;
     private String name;
 
     public SimpleShoppingList(String name){
         this.name = name;
-        this.items = new ArrayList<SimpleItem>();
+        this.items = new ArrayList<>();
     }
 
     @Override
-    public void addItem(SimpleItem item) {
+    public void addItem(Item item) {
         this.items.add(item);
     }
 
@@ -24,7 +24,7 @@ public class SimpleShoppingList implements ShoppingList, Serializable {
     }
 
     @Override
-    public List<SimpleItem> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
