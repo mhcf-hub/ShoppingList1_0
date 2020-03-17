@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="shopping_lists">Shopping Lists</string>
+    <string name="all_lists">All Lists</string>
+    <string name="lists_prompt">Chose a shopping list</string>
+    <string name="all_shopping_lists">All Shopping Lists</string>
+    <string name="select_list">Select List:</string>
+    <string name="or">OR</string>
+    <string name="list_name">List Name</string>
+    <string name="add_list">Add List</string>
+    <string name="show_edit_list">Show/Edit List</string>
+    <string name="add_item">Add Item</string>
+    <string name="textview">TextView</string>
+    <string name="item">Item</string>
+    <string name="name">Name</string>
+
+</resources>
